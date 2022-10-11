@@ -33,6 +33,9 @@ def main():
     # pattern = 'BCAACCA'
     # text = 'abbababbabababb'
     # pattern =    'abb'
+    # text = 'ababcabcabababd'
+    # pattern = 'ababd'
+
     patternChars = {}
     startingPos = 0
     matchedIndexes = []
