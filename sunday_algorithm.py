@@ -1,8 +1,5 @@
 
 # ----Finds if pattern matches text, starting from index----#
-from asyncio.windows_events import NULL
-
-
 def matchesAt(text, index, pattern):
     if len(text) < len(pattern):
         return False
@@ -12,14 +9,10 @@ def matchesAt(text, index, pattern):
     return True
 
 # ----Adds to array indexes where pattern matches text----#
-
-
 def reportSuccess(index, matchedIndexes):
     matchedIndexes.append(index)
 
 #----Creates dictionary of last indexes of letters----#
-
-
 def createPatternLettersDictionary(pattern, patternChars):
     for index, letter in enumerate(reversed(pattern)):
         if letter not in patternChars:
@@ -27,8 +20,6 @@ def createPatternLettersDictionary(pattern, patternChars):
     return patternChars
 
 #----Preprocesses text and patern, returns shift number, if letter not in dictionary return number longer than pattern----#
-
-
 def preprocess(patternChars, letter, pattern):
     if letter not in patternChars:
         return len(pattern) + 1
@@ -54,7 +45,8 @@ def main():
 
         if (len(pattern) + startingPos) >= len(text):
             break
-        startingPos += preprocess(patternChars, text[len(pattern) + startingPos], pattern)
+        startingPos += preprocess(patternChars,
+                                  text[len(pattern) + startingPos], pattern)
 
     print(matchedIndexes)
 
